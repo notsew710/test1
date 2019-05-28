@@ -1,12 +1,11 @@
 #!/bin/bash
 
     vmName=$1
-    groupName=$2
 
-    createdVm=$(az vm list --query [].name | grep -E $createdVms)
-    if [ -z $createdVm && $createdGroup ]; then 
+    createdVm=$(az vm list --query [].name | grep -E $VMname)
+    if [ -z $createdVm ]; then 
             az vm create --name $VMname \
-            --resource-group $groupname \
+            --resource-group $DreamTeam \
             --image UbuntuLTS \
             --size B1S \
             --location southcentralus 
